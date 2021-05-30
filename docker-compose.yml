@@ -47,3 +47,10 @@ services:
     environment:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
+
+
+# postgress info in production
+# username: postgres
+# password: postgrespassword
+# databasename: fibvalues
+# vpc name: multi-docker-vpc

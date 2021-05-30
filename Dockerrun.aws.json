@@ -1,0 +1,30 @@
+{
+	"AWSEBDocekrrunVersion": 2,
+	"containerDefinitions": [
+		{
+			"name": "client",
+			"image": "tak113/multi-client",
+			"hostname": "client",
+			"essential": false
+		},
+		{
+			"name": "worker",
+			"image": "tak113/multi-worker",
+			"hostname": "worker",
+			"essential": false
+		},
+		{
+			"name": "nginx",
+			"image": "tak113/multi-nginx",
+			"hostname": "nginx",
+			"essential": true,
+			"portMappings": [
+				{
+					"hostPort": 80,
+					"containerPort": 80
+				}
+			],
+			"links": ["client", "server"]
+		}
+	]
+}

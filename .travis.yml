@@ -23,3 +23,15 @@ after_success:
   - docker push tak113/multi-nginx
   - docker push tak113/multi-server
   - docker push tak113/multi-worker
+
+deploy:
+  provider: elaticbeanstalk
+  region: "us-west-2"
+  app: "multi-docker-test"
+  env: "Multidockertest-env"
+  bucket_name: "elasticbeanstalk-us-west-2-147528153165"
+  bucket_path: "multi-docker-test"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
