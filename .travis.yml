@@ -15,7 +15,7 @@ after_success:
   - docker build -t tak113/multi-client ./client
   - docker build -t tak113/multi-nginx ./nginx
   - docker build -t tak113/multi-server ./server
-  - docker build -t tak113/worker ./worker
+  - docker build -t tak113/multi-worker ./worker
   # login to the dokcer CLI. DOCKER_ID and DOCKER_PASSWORD are in travis site (procet=>more options=>environment variables)
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # take those images and push them to docker hub
